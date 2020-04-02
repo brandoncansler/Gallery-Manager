@@ -1,24 +1,14 @@
-var mysql = require('mysql');
+var Sequelize = require("sequelize");
 
-var connection;
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        port: 3306,
-        host: 'localhost',
-        user: 'root',
-        password: null,
-        database: ''
-    });
-}
-
-connection.connect(function (err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-    console.log('connected as id ' + connection.threadId);
+var sequelize = new Sequelize("gallery_db", "root", "", {
+  host: "localhost",
+  port: 3306,
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  }
 });
 
-module.exports = connection;
+module.exports = sequelize;
