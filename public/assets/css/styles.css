@@ -39,6 +39,12 @@ input {
     text-align: center;
 }
 
+.cloudinary-button {
+    margin-bottom: 0;
+    padding: 0px 30px !important;
+    text-align: center;
+}
+
 /* fixed bottom footer */
 .bottom {
     position: fixed;
@@ -50,7 +56,6 @@ input {
     position: fixed;
     top: 0;
 }
-
 /* Mobile first queries */
 
 /* Larger than mobile */

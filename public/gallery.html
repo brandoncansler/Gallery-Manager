@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- local css file -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- skeleton css framework -->
+    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/skeleton.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="title"> <!-- gallery name --> </h1>
+        </div>
+        <div class="row">
+            <!-- product gallery widget display here -->
+            <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
+            </script>
+    
+            <div id="my-gallery" style="max-width:80%;margin:auto">
+            </div>
+    
+            <script type="text/javascript">
+                const myGallery = cloudinary.galleryWidget({
+                    container: "#my-gallery",
+                    cloudName: "dtcbuv5jw",
+                    mediaAssets: [
+                        { tag: " " }, // by default mediaType: "image", insert tag for photos from cloud
+                    ]
+                });
+    
+                myGallery.render();
+            </script>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="bottom">
+        <h6>Made by <em>Gallery Guys</em> &#9400; 2020 </h6>
+    </div>
+    <!--- jquery external scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.js"></script>
+</body>
+
+</HTML>
