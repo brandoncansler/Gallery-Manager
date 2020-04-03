@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("gallery_db", "root", "password", {
+var sequelize = new Sequelize("gallery_db", "root", "perkins3", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
