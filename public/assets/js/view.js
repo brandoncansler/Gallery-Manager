@@ -38,7 +38,7 @@ $(document).ready(function () {
             [
                 "<tr class='list-gallery-item new-item'>",
                 "<span>",
-                "<td> <a href='/gallery'>", gallery_name, "</a>",
+                "<td> <a href='/gallery",gallery_name,"'>", gallery_name, "</a>",
                 "</td>",
                 "</span>",
                 "</tr>"
