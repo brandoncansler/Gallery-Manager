@@ -3,7 +3,7 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 var Gallery = sequelize.define("Gallery", {
-  photos: Sequelize.STRING,
+  title: Sequelize.STRING,
  
 });
 
