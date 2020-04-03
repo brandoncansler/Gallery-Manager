@@ -14,6 +14,19 @@ $(document).ready(function () {
     // getting galleries from database on page load
     getGalleries();
 
+    // initializeRows function to update the list similiar to sequelize activity 10 with todos
+    /*
+    // This function resets the todos displayed with new todos from the database
+    function initializeRows() {
+        $todoContainer.empty();
+        var rowsToAdd = [];
+        for (var i = 0; i < todos.length; i++) {
+        rowsToAdd.push(createNewRow(todos[i]));
+        }
+        $todoContainer.prepend(rowsToAdd);
+    }
+    */
+
     // getGalleries function
     function getGalleries() {
         $.get("/api/all", function (data) {
