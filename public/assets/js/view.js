@@ -38,7 +38,7 @@ $(document).ready(function () {
             [
                 "<tr class='list-gallery-item new-item'>",
                 "<span>",
-                "<td> <a href='/gallery",gallery_name,"'>", gallery_name, "</a>",
+                "<td> <a href='/gallery/",gallery,"'>", gallery.id, "</a>",
                 "</td>",
                 "</span>",
                 "</tr>"
@@ -53,11 +53,11 @@ $(document).ready(function () {
     function insertGallery(event) {
         event.preventDefault();
         var gallery = {
-            text: $newGalleryInput.val().trim(),
-            complete: false
+            text: $newGalleryInput.val().trim()
         };
 
         $.post("/api/all", gallery, getGalleries);
         $newGalleryInput.val("");
+        console.log(gallery);
     }
 });

@@ -1,20 +1,21 @@
-var Gallery = require("../models/gallery.js");
+var db = require("../models");
 
 module.exports = function (app) {
   function doFindAll(where, res) {
-    Gallery.findAll({ where }).then(function (results) {
+    db.Gallery.findAll({ where }).then(function (results) {
       res.json(results);
     });
   }
 
   app.get("/api/all", function (req, res) {
     doFindAll({}, res);
+    
   });
 
   app.post("/api/new", function (req, res) {
     console.log(req.body);
-    Gallery.create({
-      title: req.body.title,
+    db.Gallery.create({
+      galleryName: req.body.galleryName,
     }).then(function (results) {
       res.json(results);
     });
@@ -22,7 +23,7 @@ module.exports = function (app) {
 
   app.delete("/api/:id", function (req, res) {
     console.log(req.params.id);
-    Gallery.destroy({
+    db.Gallery.destroy({
       where: {
         id: req.params.id
       }

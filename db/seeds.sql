@@ -1,7 +1,7 @@
 USE gallery_db;
 
-CREATE TABLE gallery(
+CREATE TABLE Galleries(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  gallery_name VARCHAR(100),
+  galleryName VARCHAR(100),
   PRIMARY KEY (id)
 );
