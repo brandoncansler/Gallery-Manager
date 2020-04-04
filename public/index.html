@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/skeleton.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -18,14 +19,18 @@
             <h1 class="title">Gallery Manager.</h1>
         </div>
         </br>
-        <div class="row">
-            <!-- placeholder text within the input -->
-            <input class="new-gallery" placeholder="name your gallery" id="input"/>
-        </div>
-        <div class="row">
-            <!-- submit button id -->
-            <button class="btn" id="submit">Submit</button>
-        </div>
+        <form class="gallery-form">
+            <div class="container">
+                <div class="row">
+                    <!-- placeholder text within the input -->
+                    <input class="new-gallery form-control" placeholder="name your gallery" id="input" type="text" />
+                </div>
+                <div class="row">
+                    <!-- submit button id -->
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
         </br>
         <div class="row">
             <table id="table">
@@ -34,16 +39,16 @@
                         <th>Your Galleries</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-                    <tr class="list-gallery-item new-item">
+                <tbody class="list-gallery-item new-item">
+                    <tr>
                         <span class="gallery-list">
-                                <!-- new galleries here -->
+                            <!-- new galleries here -->
                         </span>
                     </tr>
                 </tbody>
             </table>
         </div>
-    
+
     </div>
 
     <!-- footer -->
