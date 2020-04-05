@@ -12,33 +12,25 @@
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="row">
-            <h1 class="title">
-                <!-- gallery name -->
-            </h1>
-        </div>
-        <div class="row">
-            <!-- product gallery widget display here -->
-            <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>
-            <div id="my-gallery" style="max-width:80%;margin:auto">
-            </div>
-            <script type="text/javascript">
-                const myGallery = cloudinary.galleryWidget({
-                    container: "#my-gallery",
-                    cloudName: "dtcbuv5jw",
-                    mediaAssets: [
-                        { tag: " " }, // by default mediaType: "image", insert tag for photos from cloud
-                    ]
-                });
-                myGallery.render();
-            </script>
-        </div>
-        <div class="row">
-            <h6>No photos yet? Click here to <a href="/upload">upload!</a></h6>
-        </div>
+    <!-- product gallery widget display here -->
+    <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>
+    <div class="container" id="my-gallery">
+        </br>
+        <h6>No photos or not enough? Click here to <a href="/upload">upload!</a></h6>
     </div>
+    <script type="text/javascript">
+        const myGallery = cloudinary.galleryWidget({
+            container: "#my-gallery",
+            cloudName: "dtcbuv5jw",
+            mediaAssets: [
+                { tag: "photo" },
+                { tag: "photos" },
+                { tag: "picture" },
+                { tag: "pictures" } // by default mediaType: "image", insert tag for photos from cloud
+            ]
+        });
+        myGallery.render();
+    </script>
     <!-- footer -->
     <div class="bottom">
         <h7>Made by <em>Gallery Guys</em> &#9400; 2020 </h7>
