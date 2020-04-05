@@ -21,9 +21,12 @@
             <button id="upload_widget" class="cloudinary-button">Upload</button>
             <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
             <script type="text/javascript">
+                const tags = ["photo", "photos", "picture", "pictures"];
+                const getMyTags = (cb, prefix) => cb(prefix ? tags.filter((t) => !t.indexOf(prefix)) : tags);
                 var options = {
                     cloudName: 'dtcbuv5jw',
-                    uploadPreset: 'project2'
+                    uploadPreset: 'project2',
+                    showAdvancedOptions: true
                 };
                 var myWidget = cloudinary.createUploadWidget(options, (error, result) => {
                     if (!error && result && result.event === "success") {
@@ -34,6 +37,13 @@
                     myWidget.open();
                 }, false);
             </script>
+        </div>
+        </br>
+        <div class="row">
+            <div>
+                <h6>Back to <a href="/gallery/1">gallery!</a></h6>
+                <h6>Back to <a href="/">home!</a></h6>
+            </div>
         </div>
     </div>
     <!-- footer -->

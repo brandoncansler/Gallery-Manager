@@ -21,7 +21,7 @@ $(document).ready(function () {
         for (var i = 0; i < galleries.length; i++) {
             galleryToAdd.push(createNewLi(galleries[i]));
         }
-        $galleryList.prepend(galleryToAdd);
+        $galleryList.append(galleryToAdd);
     }
 
     // getGalleries function
@@ -36,6 +36,12 @@ $(document).ready(function () {
     function createNewLi(gallery) {
         var $newGalleryList = $(
             [
+                "<table class='list-gallery-item new-item' id='table'>",
+                "<thead>",
+                "<tr>",
+                "<th> Your Galleries </th>",
+                "</tr>",
+                "</thead>",
                 "<tbody class='list-gallery-item new-item' id='tbody'>",
                 "<tr>",
                 "<span>",
@@ -43,7 +49,8 @@ $(document).ready(function () {
                 "</td>",
                 "</span>",
                 "</tr>",
-                "</tbody>"
+                "</tbody>",
+                "</table>"
             ].join("")
         );
         $newGalleryList.data("gallery", gallery);

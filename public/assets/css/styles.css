@@ -32,6 +32,12 @@ body {
 .table {
     margin: none;
     align-items: center;
+    text-align: center;
+}
+
+td {
+    align-items: center;
+    text-align: center;
 }
 
 /* center user input */
