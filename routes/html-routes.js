@@ -2,7 +2,7 @@
 var path = require("path");
 
 module.exports = function (app) {
-    app.get("/gallery", function (req, res) {
+    app.get("/gallery/:id?", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/gallery.html"));
     });
 

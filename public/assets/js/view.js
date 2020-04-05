@@ -36,15 +36,16 @@ $(document).ready(function () {
     function createNewLi(gallery) {
         var $newGalleryList = $(
             [
-                "<tr class='list-gallery-item new-item'>",
+                "<tbody class='list-gallery-item new-item' id='tbody'>",
+                "<tr>",
                 "<span>",
-                "<td> <a href='/gallery/",gallery,"'>", gallery.id, "</a>",
+                "<td> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a>",
                 "</td>",
                 "</span>",
-                "</tr>"
+                "</tr>",
+                "</tbody>"
             ].join("")
         );
-
         $newGalleryList.data("gallery", gallery);
         return $newGalleryList;
     }
@@ -53,10 +54,9 @@ $(document).ready(function () {
     function insertGallery(event) {
         event.preventDefault();
         var gallery = {
-            text: $newGalleryInput.val().trim()
+            galleryName: $newGalleryInput.val().trim()
         };
-
-        $.post("/api/all", gallery, getGalleries);
+        $.post("/api/new", gallery, getGalleries);
         $newGalleryInput.val("");
         console.log(gallery);
     }
