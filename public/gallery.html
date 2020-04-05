@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- local css file -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <!-- skeleton css framework -->
-    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/Skeleton-2.0.4/css/skeleton.css">
 </head>
 
 <body>
 
     <div class="container">
         <div class="row">
-            <h1 class="title"> <!-- gallery name --> </h1>
+            <h1 class="title">
+                <!-- gallery name -->
+            </h1>
         </div>
         <div class="row">
             <!-- product gallery widget display here -->
-            <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
-            </script>
-    
+            <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>
             <div id="my-gallery" style="max-width:80%;margin:auto">
             </div>
-    
             <script type="text/javascript">
                 const myGallery = cloudinary.galleryWidget({
                     container: "#my-gallery",
@@ -33,17 +32,17 @@
                         { tag: " " }, // by default mediaType: "image", insert tag for photos from cloud
                     ]
                 });
-    
                 myGallery.render();
             </script>
         </div>
+        <div class="row">
+            <h6>No photos yet? Click here to <a href="/upload">upload!</a></h6>
+        </div>
     </div>
-
     <!-- footer -->
     <div class="bottom">
-        <h6>Made by <em>Gallery Guys</em> &#9400; 2020 </h6>
+        <h7>Made by <em>Gallery Guys</em> &#9400; 2020 </h7>
     </div>
-    <script src="./assets/js/view.js" type="text/javascript"></script>
 </body>
 
-</HTML>
+</html>

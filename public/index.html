@@ -5,58 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- local css file -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
     <!-- skeleton css framework -->
-    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/Skeleton-2.0.4/css/skeleton.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <h1 class="title">Gallery Manager.</h1>
-        </div>
-        </br>
-        <form class="gallery-form">
-            <div class="container">
-                <div class="row">
-                    <!-- placeholder text within the input -->
-                    <input class="new-gallery form-control" placeholder="name your gallery" id="input" type="text" />
-                </div>
-                <div class="row">
-                    <!-- submit button id -->
-                    <button class="btn" type="submit">Submit</button>
-                </div>
+    <form id="gallery-form">
+        <div class="container">
+            <div class="row">
+                <h1 class="title">Gallery Manager.</h1>
             </div>
-        </form>
-        </br>
-        <div class="row">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Your Galleries</th>
-                    </tr>
-                </thead>
-                <tbody class="list-gallery-item new-item">
-                    <tr>
-                        <span class="gallery-list">
-                            <!-- new galleries here -->
-                        </span>
-                    </tr>
-                </tbody>
-            </table>
+            </br>
+            <div class="row">
+                <!-- placeholder text within the input -->
+                <input class="new-gallery" placeholder="name your gallery" id="input" />
+            </div>
+            <div class="row">
+                <!-- submit button id -->
+                <button class="btn" id="submit">Submit</button>
+            </div>
+            <div class="row">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Your Galleries</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list-gallery-item new-item" id="tbody">
+                        <tr>
+                            <span class="gallery-list">
+                                <!-- new galleries here -->
+                            </span>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-
-    </div>
-
+    </form>
     <!-- footer -->
     <div class="bottom">
-        <h6>Made by <em>Gallery Guys</em> &#9400; 2020 </h6>
+        <h7>Made by <em>Gallery Guys</em> &#9400; 2020 </h7>
     </div>
     <!--- jquery external scripts -->
-    <script src="./assets/js/view.js" type="text/javascript"></script>
+    <script src="/assets/js/view.js" type="text/javascript"></script>
 </body>
 
-</HTML>
+</html>

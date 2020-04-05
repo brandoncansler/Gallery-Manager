@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     // event listeners
     $(document).on("submit", "#gallery-form", insertGallery);
-    // $(document).on("click", "button.complete", toggleComplete);
 
     // galleries array
     var galleries = [];
@@ -33,28 +32,20 @@ $(document).ready(function () {
         });
     }
 
-    // Toggles complete status
-    // function toggleComplete(event) {
-    //     event.stopPropagation();
-    //     var gallery = $(this).parent().data("gallery");
-    //     gallery.complete = !gallery.complete;
-    // }
-
     // function to construct new list item
     function createNewLi(gallery) {
         var $newGalleryList = $(
             [
-                "<tbody class='list-gallery-item new-item'>",
+                "<tbody class='list-gallery-item new-item' id='tbody'>",
                 "<tr>",
-                "<span class='gallery-list'>",
-                "<td>", "<a href='/gallery/", galleryName, "'>", galleryName, "</a>",
+                "<span>",
+                "<td> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a>",
                 "</td>",
                 "</span>",
                 "</tr>",
                 "</tbody>"
             ].join("")
         );
-
         $newGalleryList.data("gallery", gallery);
         return $newGalleryList;
     }
@@ -63,12 +54,10 @@ $(document).ready(function () {
     function insertGallery(event) {
         event.preventDefault();
         var gallery = {
-            text: $newGalleryInput.val().trim(),
-            // complete: false
+            galleryName: $newGalleryInput.val().trim()
         };
         $.post("/api/new", gallery, getGalleries);
-        console.log("Data: " + $newGalleryInput);
         $newGalleryInput.val("");
-        event.preventDefault();
+        console.log(gallery);
     }
 });

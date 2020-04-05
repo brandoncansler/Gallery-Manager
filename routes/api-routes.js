@@ -9,6 +9,7 @@ module.exports = function (app) {
 
   app.get("/api/all", function (req, res) {
     doFindAll({}, res);
+
   });
 
   app.post("/api/new", function (req, res) {
