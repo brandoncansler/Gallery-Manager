@@ -7,12 +7,12 @@ module.exports = function (app) {
     });
   }
 
-  app.get("/api/all", function (req, res) {
+  app.get("/api/galleries", function (req, res) {
     doFindAll({}, res);
 
   });
 
-  app.post("/api/new", function (req, res) {
+  app.post("/api/galleries", function (req, res) {
     console.log(req.body);
     db.Gallery.create({
       galleryName: req.body.galleryName,
@@ -21,14 +21,14 @@ module.exports = function (app) {
     });
   });
 
-  app.delete("/api/:id", function (req, res) {
+  app.delete("/api/galleries/:id", function (req, res) {
     console.log(req.params.id);
     db.Gallery.destroy({
       where: {
         id: req.params.id
       }
     }).then(function () {
-      res.end();
+      res.json(req.params.id);
     });
   });
 };

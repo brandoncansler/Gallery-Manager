@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     // event listeners
     $(document).on("submit", "#gallery-form", insertGallery);
-    $(document).on("delete", "#gallery-form", deleteGallery);
+    $(document).on("click", "button.delete", deleteGallery);
 
     // galleries array
     var galleries = [];
@@ -27,9 +27,11 @@ $(document).ready(function () {
 
     // getGalleries function
     function getGalleries() {
-        $.get("/api/all", function (data) {
+        console.log("start");
+        $.get("/api/galleries", function (data) {
             galleries = data;
             initializeRows();
+            console.log("done");
         });
     }
 
@@ -40,9 +42,9 @@ $(document).ready(function () {
                 "<div class='list-gallery-item new-item'>",
                 "<span>",
                 "<ol>",
-                 "<li> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a> </li>",
+                "<li> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a> </li>",
                 "   ",
-                "<button class='btn' id='delete'>",
+                "<button class='delete btn' data-id='", gallery.id, "'>",
                 "Delete",
                 "</button>",
                 "</ol>",
@@ -56,8 +58,13 @@ $(document).ready(function () {
 
     // delete gallery
     function deleteGallery(event) {
-        event.preventDefault();
-        // code here
+        event.stopPropagation();
+        var id = $(this).data("id");
+        console.log(id);
+        $.ajax({
+            method: "DELETE",
+            url: "/api/galleries/" + id
+        }).then(()=> {getGalleries()});
     }
 
     // insert gallery
@@ -66,7 +73,7 @@ $(document).ready(function () {
         var gallery = {
             galleryName: $newGalleryInput.val().trim()
         };
-        $.post("/api/new", gallery, getGalleries);
+        $.post("/api/galleries", gallery, getGalleries);
         $newGalleryInput.val("");
         console.log(gallery);
     }
