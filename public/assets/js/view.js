@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     // event listeners
     $(document).on("submit", "#gallery-form", insertGallery);
+    $(document).on("delete", "#gallery-form", deleteGallery);
 
     // galleries array
     var galleries = [];
@@ -36,25 +37,27 @@ $(document).ready(function () {
     function createNewLi(gallery) {
         var $newGalleryList = $(
             [
-                "<table class='list-gallery-item new-item' id='table'>",
-                "<thead>",
-                "<tr>",
-                "<th> Your Galleries </th>",
-                "</tr>",
-                "</thead>",
-                "<tbody class='list-gallery-item new-item' id='tbody'>",
-                "<tr>",
+                "<div class='list-gallery-item new-item'>",
                 "<span>",
-                "<td> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a>",
-                "</td>",
+                "<ol>",
+                 "<li> <a href='/gallery/", gallery.id, "'>", gallery.galleryName, "</a> </li>",
+                "   ",
+                "<button class='btn' id='delete'>",
+                "Delete",
+                "</button>",
+                "</ol>",
                 "</span>",
-                "</tr>",
-                "</tbody>",
-                "</table>"
+                "</div>"
             ].join("")
         );
         $newGalleryList.data("gallery", gallery);
         return $newGalleryList;
+    }
+
+    // delete gallery
+    function deleteGallery(event) {
+        event.preventDefault();
+        // code here
     }
 
     // insert gallery
